@@ -1,0 +1,22 @@
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: yellow;
+}
+
+.high-usage {
+  color: red;
+}
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+h1 {
+  border: 2px solid;
+  width: 100px;
+  margin:auto;
+}

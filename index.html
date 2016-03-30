@@ -1,49 +1,24 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <script type="text/javascript" src="src/Thermostat.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="src/stylesheet.css">
     <title>Thermostat</title>
   </head>
   <body>
-    <div id="display-temp">
-      <script>
-        var thermostat = new Thermostat();
-        document.write(thermostat.getCurrentTemperature());
-      </script>
-    </div>
-    <div id="display-usage">
-    </div>
-    <div class="adjust-temperature">
-      <button onClick="thermostat.increaseTemperature();
-      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
-      Increase Temperature</button>
-      <button onClick="thermostat.decreaseTemperature();
-      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
-      Decrease Temperature</button>
-    </div>
-    <div>
-      <button onClick="thermostat.reset();
-      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
-      Reset</button>
-      <button onClick="thermostat.getEnergyUsage();
-      document.getElementById('display-usage').innerHTML = thermostat.getEnergyUsage()">
-      Update Energy Usage</button>
-    </div>
-    <div>
-      <p id='power-save-mode-on'>Power saving mode is on.</p>
-      <p id='power-save-mode-off'>Power saving mode is off.</p>
-      <script>document.getElementById('power-save-mode-off').style.display = 'none'</script>
-
-      <button onClick="thermostat.powerSavingMode = true;
-      document.getElementById('power-save-mode-off').style.display = 'none';
-      document.getElementById('power-save-mode-on').style.display = 'block'";>
-      On</button>
-      <button onClick="thermostat.powerSavingMode = false;
-      document.getElementById('power-save-mode-on').style.display = 'none';
-      document.getElementById('power-save-mode-off').style.display = 'block'">
-      Off</button>
-    </div>
+    <section>
+      <h1 class="medium-usage" id="temperature"></h1>
+      <p>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <button id="temperature-reset">reset</button>
+        power saving mode is <span id="power-saving-status">on</span>
+        <button id="powersaving-on">PSM on</button>
+        <button id="powersaving-off">PSM off</button>
+      </p>
+    </section>
+    <script type='text/javascript' src="src/Thermostat.js"></script>
+    <script type='text/javascript' src="src/ThermostatInterface.js">
+    </script>
   </body>
 </html>
