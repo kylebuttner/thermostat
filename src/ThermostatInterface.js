@@ -1,5 +1,16 @@
 var thermostat = new Thermostat();
 $(document).ready(function(){
+  var city;
+  var temp;
+
+  $('#get-city-temp').click(function() {
+    city = $('input[name=city]').val();
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=9ea5a671785aad32d59406d70b29abaf',function(data){
+        $('#city-temp').text(data.main.temp);
+    });
+  });
+
+
 
   function updateTemperature(){
     $('h1#temperature').text(thermostat.getCurrentTemperature());
