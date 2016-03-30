@@ -3,11 +3,19 @@ $(document).ready(function(){
   var city;
   var temp;
 
-  $('#get-city-temp').click(function() {
-    city = $('input[name=city]').val();
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=9ea5a671785aad32d59406d70b29abaf',function(data){
-        $('#city-temp').text(data.main.temp);
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+    var token = '&appid=9ea5a671785aad32d59406d70b29abaf';
+    var units = '&units=metric'
+    $.get( url + city + units + token,function(data){
+        $('#city-temp').html('Current temperature in '+ data.name + ': '+ data.main.temp + '&deg;C');
     });
+  };
+
+  $('#get-city-temp').submit(function(event) {
+    event.preventDefault();
+    var city = $('input[name=city]').val();
+    displayWeather(city);
   });
 
 
