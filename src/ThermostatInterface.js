@@ -21,11 +21,11 @@ $(document).ready(function(){
 
 
   function updateTemperature(){
-    $('h1#temperature').text(thermostat.getCurrentTemperature());
-    $('h1#temperature').attr('class',thermostat.getEnergyUsage());
+    $('#temperature').html('<div id="number">' + thermostat.getCurrentTemperature() + '</div>');
+    $('#temperature').attr('class',thermostat.getEnergyUsage());
   };
 
-  $('h1#temperature').text(thermostat.getCurrentTemperature());
+  $('#temperature').html('<div id="number">' + thermostat.getCurrentTemperature() + '</div>');
   $('button#temperature-up').click(function(){
     thermostat.increaseTemperature();
      updateTemperature();
