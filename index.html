@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script type="text/javascript" src="src/Thermostat.js">
+    </script>
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <div id="display-temp">
+      <script>
+        var thermostat = new Thermostat();
+        document.write(thermostat.getCurrentTemperature());
+      </script>
+    </div>
+    <div id="display-usage">
+    </div>
+    <div class="adjust-temperature">
+      <button onClick="thermostat.increaseTemperature();
+      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
+      Increase Temperature</button>
+      <button onClick="thermostat.decreaseTemperature();
+      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
+      Decrease Temperature</button>
+    </div>
+    <div>
+      <button onClick="thermostat.reset();
+      document.getElementById('display-temp').innerHTML = thermostat.getCurrentTemperature()">
+      Reset</button>
+      <button onClick="thermostat.getEnergyUsage();
+      document.getElementById('display-usage').innerHTML = thermostat.getEnergyUsage()">
+      Update Energy Usage</button>
+    </div>
+    <div>
+      <p id='power-save-mode-on'>Power saving mode is on.</p>
+      <p id='power-save-mode-off'>Power saving mode is off.</p>
+      <script>document.getElementById('power-save-mode-off').style.display = 'none'</script>
+
+      <button onClick="thermostat.powerSavingMode = true;
+      document.getElementById('power-save-mode-off').style.display = 'none';
+      document.getElementById('power-save-mode-on').style.display = 'block'";>
+      On</button>
+      <button onClick="thermostat.powerSavingMode = false;
+      document.getElementById('power-save-mode-on').style.display = 'none';
+      document.getElementById('power-save-mode-off').style.display = 'block'">
+      Off</button>
+    </div>
+  </body>
+</html>
