@@ -1,11 +1,11 @@
-describe('thermostat',function(){
-  var thermostat
+describe('Thermostat',function(){
+  var thermostat;
 
   beforeEach(function(){
-   thermostat = new thermostat();
+   thermostat = new Thermostat();
   });
 
   it('it should start at 20degrees',function(){
-    expect(thermostat.reading).toEqual(20)
+    expect(thermostat.reading()).toEqual(20);
   });
 });
