@@ -33,6 +33,18 @@ $( document ).ready(function () {
     } else {
       $('#screen').css('background-color', '#f9a72a');
     }
-}
+  }
 
+  function displayWeather(city){
+    var url   = 'http://api.openweathermap.org/data/2.5/weather?q=' + city ;
+    var key   = '&appid=19569d86978d1b271daecc3cb220ecd9';
+    var units = '&units=metric';
+    $.get( url + key + units, function(data) {
+      $('#cityTemperature').text(data.weather[0].main);
+    });
+  }
+
+  // $('#selectCity').submit(function(event){
+    displayWeather('London');
+  // });
 });
