@@ -25,7 +25,7 @@ $( document ).ready(function () {
   });
 
   function display(){
-    $('#temperature').html(thermostat.temperature + 'ºC');
+    $('#temperature').html('Home temp: ' + thermostat.temperature + 'ºC');
     if(thermostat.energyUsage === 'medium') {
       $('#screen').css('background-color', '#98f5c8');
     } else if(thermostat.energyUsage === 'low') {
