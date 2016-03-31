@@ -40,11 +40,15 @@ $( document ).ready(function () {
     var key   = '&appid=19569d86978d1b271daecc3cb220ecd9';
     var units = '&units=metric';
     $.get( url + key + units, function(data) {
-      $('#cityTemperature').text(data.weather[0].main);
+      $('#cityTemperature').text(Math.round(data.main.temp) + 'ºC')
     });
   }
 
-  // $('#selectCity').submit(function(event){
-    displayWeather('London');
-  // });
+  displayWeather('Quito');
+
+  $('#selectCity').submit(function(event){
+    event.preventDefault();
+    var city = $('#chosenCity').val();
+    displayWeather(city);
+  })
 });
