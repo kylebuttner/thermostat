@@ -4,12 +4,13 @@ $( document ).ready(function () {
   var thermostat = new Thermostat();
 
   $.get('/temperature', function(data){
-    if(data !== undefined){
-      // var thermostat = new Thermostat();
-      thermostat.temperature = data;
-    }
+    data = data || thermostat._defaultTemperature;
+    thermostat.temperature = data;
+
     console.log(data)
     console.log(thermostat.temperature);
+    display();
+
   });
 
   console.log(thermostat.temperature);
@@ -22,7 +23,6 @@ $( document ).ready(function () {
     // console.log(thermostat.temperature);
   // });
 
-  display();
 
     $('#increase').click(function () {
     thermostat.increase();

@@ -9,7 +9,7 @@ function Thermostat(defaultTemp = 20) {
 }
 
 Thermostat.prototype.increase = function () {
-  if(this.temperature === this.maxTemp()){
+  if(this.temperature >= this.maxTemp()){
     throw new Error('BOOP');
   }
     this.temperature++;
@@ -17,7 +17,7 @@ Thermostat.prototype.increase = function () {
 };
 
 Thermostat.prototype.decrease = function () {
-  if(this.temperature === this._minTemperature){
+  if(this.temperature <= this._minTemperature){
     throw new Error('BEEP');
   }
     this.temperature--;

@@ -19,7 +19,7 @@ class Thermostat < Sinatra::Base
   post '/temperature' do
     # session[:temperature] = params[:temperature]
     session[:temperature]  = params[:temperature]
-    p session[:temperature]
+    # p session[:temperature]
     redirect '/'
   end
   # start the server if ruby file executed directly
