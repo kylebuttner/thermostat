@@ -4,15 +4,15 @@ $( document ).ready(function () {
   var thermostat = new Thermostat();
 
   $.get('/temperature', function(data){
-    var parsed = JSON.parse(data);
-    if(parsed.temperature !== undefined){
+    if(data !== undefined){
       // var thermostat = new Thermostat();
-      thermostat.temperature = parsed.temperature;
+      thermostat.temperature = data;
     }
-    console.log(parsed.temperature)
+    console.log(data)
     console.log(thermostat.temperature);
   });
 
+  console.log(thermostat.temperature);
 
   // $.get('/temperature', function(data){
   //   console.log(data);
@@ -46,7 +46,7 @@ $( document ).ready(function () {
   });
 
   function display(){
-    $.post( '/temperature', { thermostat: JSON.stringify(thermostat) });
+    $.post( '/temperature', { temperature: thermostat.temperature });
     $('#temperature').html('Home temp: ' + thermostat.temperature + 'ºC');
     if(thermostat.energyUsage === 'medium') {
       $('#screen').css('background-color', '#98f5c8');

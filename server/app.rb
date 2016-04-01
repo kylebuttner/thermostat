@@ -5,21 +5,21 @@ class Thermostat < Sinatra::Base
   enable :sessions
 
   get '/' do
-    session[:thermostat]
+    session[:temperature]
     # session[:temperature]
     send_file 'thermostat.html'
   end
 
   get '/temperature' do
-    session[:thermostat]
+    session[:temperature]
     # p session[:thermostat]
     # redirect '/'
   end
 
   post '/temperature' do
     # session[:temperature] = params[:temperature]
-    session[:thermostat]  = params[:thermostat]
-    p session[:thermostat]
+    session[:temperature]  = params[:temperature]
+    p session[:temperature]
     redirect '/'
   end
   # start the server if ruby file executed directly
