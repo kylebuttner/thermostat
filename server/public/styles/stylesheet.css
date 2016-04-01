@@ -1,0 +1,126 @@
+.thermostat{
+  background-color: #27b9a4;
+  text-align:center;
+  margin: 0 auto;
+  max-width: 200px;
+  padding-top: 15px;
+  border-radius: 20px;
+  height: 220px;
+}
+
+#screen{
+  position: relative;
+  width: 165px;
+  height: 100px;
+  margin: auto;
+  transition: background-color 0.7s ease;
+  background: #98f5c8;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  text-indent: .1em;
+  padding-top: 10px;
+}
+
+#temperature{
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 40px;
+  color: black;
+  font-size: .9em;
+}
+
+#decrease{
+  background-color: #000085;
+  height: 15px;
+  width: 40px;
+  position: relative;
+  bottom: -50px;
+  left: -20px;
+  border-radius: 3px;
+}
+
+#increase{
+  background-color: #f2d04a;
+    height: 40px;
+    position: relative;
+    width: 15px;
+    top: 20px;
+    right: 50px;
+    border-radius: 3px;
+}
+
+#increase:after{
+  background-color: #f2d04a;
+content: "";
+height: 15px;
+left: -13px;
+position: absolute;
+top: 12px;
+width: 40px;
+border-radius: 3px;
+}
+
+#reset{
+  background-color: #e70e16;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: relative;
+  top: 35px;
+  left: 30px;
+}
+
+
+.toggle-button {
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 20px;
+  border: 2px solid #D0D0D0;
+  height: 10px;
+  cursor: pointer;
+  width: 25px;
+  position: relative;
+  display: inline-block;
+  top: 20px;
+ }
+.toggle-button button {
+  cursor: pointer;
+  outline: 0;
+  display:block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  width: 10px;
+  height: 16px;
+  background-color: white;
+  float: left;
+  margin: -3px 0 0 -3px;
+  border: 2px solid #D0D0D0;
+  transition: left 0.3s;
+}
+.toggle-button-selected {
+  background-color: #83B152;
+  border: 2px solid #7DA652;
+  top: 20px;
+}
+.toggle-button-selected button {
+  cursor: pointer;
+outline: 0;
+display: block;
+position: absolute;
+left: 13px;
+top: 0;
+border-radius: 100%;
+background-color: #7DA750;
+/* margin: -3px 0 0 -3px; */
+width: 5px;
+height: 15px;
+ border: 2px solid #6E904B;
+/* box-shadow: 0 0 4px rgba(0,0,0,0.1); */
+}
+
+button {
+  border:none;
+  cursor: pointer;
+}

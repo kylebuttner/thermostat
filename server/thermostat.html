@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+    <script src="javascript/thermostat.js"></script>
+    <script src="javascript/lib/jquery/jquery.js"></script>
+    <script src="javascript/interface.js"></script>
+    <link type='text/css' rel='stylesheet' href='styles/stylesheet.css'/>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="thermostat">
+      <div id="screen">
+        <div id="temperature"></div>
+      </div>
+      <button id="decrease"></button>
+      <button id="increase"></button>
+      <button id="reset"></button>
+      <div class='toggle-button toggle-button-selected' id="PSM">
+        <button ></button>
+      </div>
+    </div>
+    <p>
+      <div>
+        <div id="cityTemperature"></div>
+        <div id='citySky'></div>
+        <form id='selectCity'>
+          <input id='chosenCity' type='text' placeholder='City here'></input>
+          <input type=submit value='TELL ME WEATHER'</input>
+        </form>
+    </div>
+  </p>
+  </body>
+</html>
