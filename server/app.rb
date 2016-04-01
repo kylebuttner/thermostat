@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'json'
 
 class Thermostat < Sinatra::Base
   enable :sessions
@@ -11,8 +12,8 @@ class Thermostat < Sinatra::Base
 
   get '/temperature' do
     session[:thermostat]
-    p session[:thermostat]
-    redirect '/'
+    # p session[:thermostat]
+    # redirect '/'
   end
 
   post '/temperature' do

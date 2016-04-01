@@ -1,14 +1,26 @@
 
 $( document ).ready(function () {
 
+  var thermostat = new Thermostat();
+
   $.get('/temperature', function(data){
-    console.log(data)
-    if(data !== undefined) {
-      var thermostat = JSON.parse(data);
-    } else {
-      var thermostat = new Thermostat();
+    var parsed = JSON.parse(data);
+    if(parsed.temperature !== undefined){
+      // var thermostat = new Thermostat();
+      thermostat.temperature = parsed.temperature;
     }
+    console.log(parsed.temperature)
+    console.log(thermostat.temperature);
   });
+
+
+  // $.get('/temperature', function(data){
+  //   console.log(data);
+  //   var parsed = JSON.parse(data);
+  //   console.log(parsed.temperature)
+  //   thermostat.temperature = parsed.temperature;
+    // console.log(thermostat.temperature);
+  // });
 
   display();
 
